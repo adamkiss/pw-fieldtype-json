@@ -1,0 +1,14 @@
+{
+  "icon":    "list",
+  "title":   "JSON",
+  "summary": "Fieldtype storing arbitrary data as JSON",
+
+  "version": 100,
+  "author": "Adam Kiss",
+  "href": "http://github.com/adamkiss/pw-fieldtype-json/",
+
+  "requires": ["PHP>=5.6.0", "ProcessWire>=3"],
+
+  "installs": "InputfieldJson",
+  "requiredBy": "InputfieldJson"
+}

@@ -1,0 +1,11 @@
+{
+  "icon": "list",
+  "title": "JSON",
+  "summary": "JSON Inputfield with some nice JavaScript to make editing easier",
+
+  "version": 100,
+  "author": "Adam Kiss",
+  "href": "http://github.com/adamkiss/pw-fieldtype-json/",
+
+  "requires": ["FieldtypeJson", "PHP>=5.6.0", "ProcessWire>=3"]
+}
