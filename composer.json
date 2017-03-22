@@ -1,0 +1,6 @@
+{
+    "require-dev": {
+        "processwire/processwire": "^3.0",
+        "kahlan/kahlan": "^3.1"
+    }
+}
