@@ -7,7 +7,7 @@
   "author": "Adam Kiss",
   "href": "http://github.com/adamkiss/pw-fieldtype-json/",
 
-  "requires": ["PHP>=5.6.0", "ProcessWire>=3"],
+  "requires": ["PHP>=5.6.0", "ProcessWire>=3.0.0"],
 
   "installs": "InputfieldJson",
   "requiredBy": "InputfieldJson"

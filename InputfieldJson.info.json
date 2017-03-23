@@ -7,5 +7,5 @@
   "author": "Adam Kiss",
   "href": "http://github.com/adamkiss/pw-fieldtype-json/",
 
-  "requires": ["FieldtypeJson", "PHP>=5.6.0", "ProcessWire>=3"]
+  "requires": ["FieldtypeJson", "PHP>=5.6.0", "ProcessWire>=3.0.0"]
 }
