@@ -28,9 +28,13 @@ class WireJson extends WireData {
   /*
     Custom methods to import/export
    */
-  public function fromJson($jsonString) {
+  public function fromJson($jsonString = null) {
+    if (!is_string($jsonString)) { return $this; }
+
     $jsonDecoded = json_decode($jsonString);
-    return $this->setArray(get_object_vars($jsonDecoded));
+    if (is_object($jsonDecoded)){
+      return $this->setArray(get_object_vars($jsonDecoded));
+    }
   }
 
   public function toJson() {
