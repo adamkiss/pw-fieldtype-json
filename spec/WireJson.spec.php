@@ -32,6 +32,14 @@
         ];
         expect($test->author->years)->toBe([1960, 1964, 1968]);
       });
+
+      it("accepts import at creation time", function(){
+        $test = new \ProcessWire\WireJson(JSON_OBJECT);
+
+        expect($test->name)->toBe('Song of Winners');
+        expect(gettype($test->author))->toBe('object');
+        expect($test->author->years)->toBe([1960, 1964, 1968]);
+      });
     });
 
     describe("-> toJson", function(){
@@ -43,13 +51,21 @@
         expect($test->toJson())->toBe(JSON_SIMPLE);
       });
 
-      it("exports self as object", function(){
+      it("exports self", function(){
 
         $test = new \ProcessWire\WireJson();
         $test->fromJson(JSON_OBJECT);
         $test->author = json_decode(JSON_SIMPLE);
 
         expect($test->toJson())->toBe(JSON_OBJECT);
+      });
+
+      it("exports self via toString", function(){
+        $test = new \ProcessWire\WireJson();
+        $test->fromJson(JSON_OBJECT);
+        $test->author = json_decode(JSON_SIMPLE);
+
+        expect("conversion: {$test}")->toBe('conversion: '.JSON_OBJECT);
       });
     });
 
