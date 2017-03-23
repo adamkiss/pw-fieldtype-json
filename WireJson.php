@@ -5,11 +5,19 @@
 */
 class WireJson extends WireData {
 
-  function __construct($jsonString = '') {
+  /*
+    Shorthand methods to import/export
+   */
+  function __construct($value = null) {
     parent::__construct();
 
-    if (!empty($jsonString)){
-      $this->fromJson($jsonString);
+    // string = json (probably)
+    if (is_string($value)){
+      $this->fromJson($value);
+    }
+
+    if (is_array($value)){
+      $this->setArray($value);
     }
   }
 
@@ -17,13 +25,16 @@ class WireJson extends WireData {
     return $this->toJson();
   }
 
+  /*
+    Custom methods to import/export
+   */
   public function fromJson($jsonString) {
     $jsonDecoded = json_decode($jsonString);
     return $this->setArray(get_object_vars($jsonDecoded));
   }
 
   public function toJson() {
-    return wireEncodeJSON($this->getArray(), true);
+    return wireEncodeJSON($this->getArray(), true, true);
   }
 
 }
